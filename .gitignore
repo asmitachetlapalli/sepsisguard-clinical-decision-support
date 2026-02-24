@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.DS_Store
+
+# Virtual environments
+venv/
+.venv/
+
+# Jupyter / editor cruft
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Outputs / artifacts
+data/processed/
+models/*.pkl
