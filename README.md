@@ -15,38 +15,38 @@ Predict sepsis onset 4-6 hours before clinical diagnosis with AUROC > 0.75, prov
 
 ## Progress Update
 
-### ✅ Completed (Phase 1)
-- [x] Data acquisition and exploration
-- [x] Preprocessing pipeline with missing value handling
-- [x] Early warning label creation (6-hour prediction window)
-- [x] Baseline model training (Logistic Regression)
-- [x] LSTM architecture definition
+### Phase 1
+- Data acquisition and exploration
+- Preprocessing pipeline with missing value handling
+- Early warning label creation (6-hour prediction window)
+- Baseline model training (Logistic Regression)
+- LSTM architecture definition
 
-### 📊 Current Results
+### Current Results
 
 | Model | Features | AUROC | Parameters | Status |
 |-------|----------|-------|------------|--------|
-| **Logistic Regression** | Current vitals (6 features) | **0.7074** | - | ✅ Complete |
-| **Random Forest** | Current vitals (6 features) | 0.5955 | - | ⚠️ Overfitting issues |
-| **LSTM** | 24-hour sequences | TBD | 53,825 | 🔄 Architecture ready |
-| **Target** | - | **> 0.75** | - | 🎯 Goal |
+| **Logistic Regression** | Current vitals (6 features) | **0.7074** | - |  Complete |
+| **Random Forest** | Current vitals (6 features) | 0.5955 | - | Overfitting issues |
+| **LSTM** | 24-hour sequences | TBD | 53,825 | Architecture ready |
+| **Target** | - | **> 0.75** | - | Goal |
 
-### 🔍 Key Findings
+### Key Findings
 - **Sepsis prevalence**: 9% of patients (90/1000) - realistic clinical distribution
 - **Class imbalance**: 1.16% positive samples (450/38,809 hours)
 - **Baseline performance**: LR achieves 0.71 AUROC with 69% recall
 - **Missing data**: 21% reduction after preprocessing (forward-fill vitals, median imputation labs)
 
-### 🔄 In Progress (Phase 2)
-- [ ] LSTM training on 24-hour vital sign sequences
-- [ ] Hyperparameter tuning and evaluation
-- [ ] Scale to full 40,000+ patient dataset
+### In Progress (Phase 2)
+- LSTM training on 24-hour vital sign sequences
+- Hyperparameter tuning and evaluation
+- Scale to full 40,000+ patient dataset
 
-### 📋 Planned (Phase 3-4)
-- [ ] RAG pipeline with Weaviate vector database
-- [ ] LLM integration (Google Gemini) for explainable recommendations
-- [ ] Streamlit dashboard development
-- [ ] End-to-end system evaluation
+### Planned (Phase 3-4)
+- RAG pipeline with Weaviate vector database
+- LLM integration (Google Gemini) for explainable recommendations
+- Streamlit dashboard development
+- End-to-end system evaluation
 
 ## Technical Architecture
 
