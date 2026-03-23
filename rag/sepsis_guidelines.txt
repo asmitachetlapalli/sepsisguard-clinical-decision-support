@@ -1,126 +1,274 @@
-## Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock (2021)
+## Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021
+## Source: Evans et al., Critical Care Medicine, 2021;49(11):e1063-e1143
+## Published by: Society of Critical Care Medicine and European Society of Intensive Care Medicine
 
-### Definition
-Sepsis is a life-threatening organ dysfunction caused by a dysregulated host response to infection. Septic shock is a subset of sepsis with circulatory and cellular/metabolic dysfunction associated with a higher risk of mortality.
+### Screening and Early Recognition
 
-### Early Recognition Criteria (qSOFA)
-- Systolic blood pressure ≤ 100 mmHg
-- Respiratory rate ≥ 22 breaths/min
-- Altered mental status (Glasgow Coma Scale < 15)
-A qSOFA score ≥ 2 suggests possible sepsis and warrants further investigation.
+Recommendation: Use a performance improvement programme for sepsis, including sepsis screening for acutely ill, high-risk patients.
+Strength: Strong recommendation | Evidence: Moderate
+Meta-analysis showed 34% mortality reduction with sepsis screening programs (OR 0.66; 95% CI 0.61-0.72).
 
-### SOFA Score Components
-- PaO2/FiO2 ratio (respiratory)
-- Platelet count (coagulation)
-- Bilirubin level (liver)
-- Mean arterial pressure or vasopressor requirement (cardiovascular)
-- Glasgow Coma Scale (neurological)
-- Creatinine or urine output (renal)
+Recommendation: Do NOT use qSOFA compared to SIRS, NEWS, or MEWS as a single screening tool for sepsis.
+Strength: Strong recommendation | Evidence: Moderate
+qSOFA is more specific but less sensitive than SIRS for early identification. It provides prognostic but not diagnostic value.
 
-### Hour-1 Bundle (Initial Resuscitation)
-1. Measure lactate level. Re-measure lactate if initial lactate is elevated (> 2 mmol/L).
-2. Obtain blood cultures before administering antibiotics.
-3. Administer broad-spectrum antibiotics within 1 hour of recognition.
-4. Begin rapid administration of 30 mL/kg crystalloid for hypotension or lactate ≥ 4 mmol/L.
-5. Apply vasopressors if patient is hypotensive during or after fluid resuscitation to maintain MAP ≥ 65 mmHg.
+Recommendation: Measure blood lactate in patients with suspected sepsis.
+Strength: Weak recommendation | Evidence: Low
+Lactate sensitivities 66-83%; specificities 80-85%. Elevated lactate (>2 mmol/L) is a key marker of tissue hypoperfusion.
 
-### Antibiotic Therapy
-- Administer IV antimicrobials as soon as possible, ideally within 1 hour of sepsis recognition.
-- Use empiric broad-spectrum therapy with one or more antimicrobials to cover all likely pathogens.
-- Narrow antimicrobial therapy once pathogen identification and sensitivities are established.
-- Suggest daily assessment for de-escalation of antimicrobial therapy.
-- Typical duration of therapy: 7-10 days for most infections.
+### Initial Resuscitation
 
-### Fluid Resuscitation
-- Use crystalloids as the fluid of choice for initial resuscitation and subsequent volume replacement.
-- Suggested initial bolus: 30 mL/kg of IV crystalloid fluid within the first 3 hours.
-- Use balanced crystalloids (e.g., Lactated Ringer's) over normal saline.
-- Albumin may be used in addition to crystalloids when patients require substantial amounts of crystalloids.
-- Avoid hydroxyethyl starches (HES).
+Recommendation: Sepsis and septic shock are medical emergencies. Treatment and resuscitation should begin immediately.
+Strength: Best Practice Statement
 
-### Vasopressor Therapy
-- First-line vasopressor: Norepinephrine (target MAP ≥ 65 mmHg).
-- Add vasopressin (up to 0.03 U/min) as second-line agent if MAP target not achieved.
-- Add epinephrine as third-line agent if needed.
-- Use dobutamine for patients with persistent hypoperfusion despite adequate fluid loading and vasopressor use.
-- Avoid dopamine except in highly selected patients (e.g., bradycardia).
+Recommendation: Administer at least 30 mL/kg of IV crystalloid fluid within the first 3 hours of resuscitation for sepsis-induced hypotension or septic shock.
+Strength: Weak recommendation (downgraded from strong in 2016) | Evidence: Low
+Based on observational evidence. Limited prospective trial data.
 
-### Corticosteroids
-- Suggest IV hydrocortisone (200 mg/day) for septic shock patients who require ongoing vasopressor therapy.
-- Do not use corticosteroids for sepsis without shock.
+Recommendation: Use dynamic measures to guide fluid resuscitation, over physical examination or static parameters alone.
+Strength: Weak recommendation | Evidence: Very Low
+Dynamic assessment associated with reduced mortality (RR 0.59; 95% CI 0.42-0.83) and shorter ICU stay.
 
-### Blood Products
-- Transfuse red blood cells only when hemoglobin concentration decreases to < 7.0 g/dL in adults (in the absence of extenuating circumstances such as myocardial ischemia, severe hypoxemia, or acute hemorrhage).
-- Do not use erythropoietin for treatment of sepsis-related anemia.
-- Do not use fresh frozen plasma to correct clotting abnormalities in the absence of bleeding or planned invasive procedures.
+Recommendation: Guide resuscitation to decrease serum lactate in patients with elevated lactate levels.
+Strength: Weak recommendation | Evidence: Low
+Must interpret lactate within clinical context. Normal lactate not achievable in all shock patients.
 
-### Mechanical Ventilation (for Sepsis-Induced ARDS)
-- Use low tidal volume ventilation (6 mL/kg predicted body weight).
-- Target plateau pressure < 30 cm H2O.
-- Use higher PEEP over lower PEEP for moderate-severe ARDS.
-- Use prone positioning for > 12 hours/day in severe ARDS (PaO2/FiO2 < 150).
-- Avoid routine use of high-frequency oscillatory ventilation.
-- Use neuromuscular blocking agents for ≤ 48 hours in early severe ARDS.
+Recommendation: Use capillary refill time as an adjunct to other perfusion measures to guide resuscitation.
+Strength: Weak recommendation (NEW in 2021) | Evidence: Low
+ANDROMEDA-SHOCK study showed reduced SOFA scores but no significant mortality difference.
+
+### MAP Target
+
+Recommendation: Target an initial mean arterial pressure (MAP) of 65 mmHg over higher MAP targets in septic shock patients requiring vasopressors.
+Strength: Strong recommendation | Evidence: Moderate
+RCT showed no mortality benefit at higher MAP targets. Higher MAP targets associated with increased atrial fibrillation. Permissive hypotension (MAP 60-65 mmHg) may be safe in patients aged 65 and older.
+
+### ICU Admission
+
+Recommendation: Admit sepsis and septic shock patients to the ICU within 6 hours.
+Strength: Weak recommendation | Evidence: Low
+ED-to-ICU delays >6 hours associated with 17% vs 12.9% mortality.
+
+### Antimicrobial Therapy
+
+Recommendation: Continuously re-evaluate and search for alternative diagnoses. Discontinue empiric antimicrobials if an alternative non-infectious cause is demonstrated.
+Strength: Best Practice Statement
+One-third of sepsis diagnoses turn out to be non-infectious conditions.
+
+Recommendation: For septic shock, administer antimicrobials immediately, ideally within 1 hour of recognition.
+Strength: Strong recommendation | Evidence: Low
+Each additional hour delay associated with 1.04-1.16 increased odds of mortality in observational studies.
+
+Recommendation: For sepsis without shock, rapidly assess likelihood of infectious versus non-infectious causes within 3 hours.
+Strength: Best Practice Statement
+
+Recommendation: For possible sepsis without shock, administer antimicrobials within 3 hours if concern for infection persists.
+Strength: Weak recommendation | Evidence: Very Low
+
+Recommendation: For low likelihood of infection without shock, defer antimicrobials while continuing close monitoring.
+Strength: Weak recommendation | Evidence: Very Low
+
+Recommendation: Do NOT use procalcitonin plus clinical evaluation to decide when to start antimicrobials, over clinical evaluation alone.
+Strength: Weak recommendation | Evidence: Very Low
+Meta-analysis of 3 RCTs (n=1,769) showed no mortality difference (RR 0.99; 95% CI 0.86-1.15).
+
+### Empiric Antimicrobial Selection
+
+Recommendation: Use empiric antimicrobials with MRSA coverage in patients at high risk for MRSA.
+Strength: Best Practice Statement
+Risk factors: prior MRSA infection/colonization, recent IV antibiotics, recurrent skin infections, invasive devices, hemodialysis, recent hospitalization.
+
+Recommendation: Do NOT use empiric antimicrobials with MRSA coverage in patients at low risk for MRSA.
+Strength: Weak recommendation | Evidence: Low
+Unnecessary MRSA coverage associated with higher mortality in some studies.
+
+Recommendation: Use two antimicrobials with gram-negative coverage for empiric treatment in patients at high risk for multi-drug resistant organisms.
+Strength: Weak recommendation | Evidence: Very Low
+Risk factors: prior resistant organism infection/colonization, hospital-acquired infection, recent broad-spectrum antibiotics.
+
+Recommendation: Do NOT use double gram-negative coverage once causative pathogen and susceptibilities are known.
+Strength: Weak recommendation | Evidence: Very Low
+Meta-analysis of 10 RCTs showed no mortality difference between mono vs combination therapy.
+
+### Antifungal Therapy
+
+Recommendation: Use empiric antifungal therapy in patients at high risk for invasive fungal infection.
+Strength: Weak recommendation | Evidence: Low
+Risk factors: febrile neutropenia failing antibiotics, Candida colonization at multiple sites, severe immunosuppression, GI perforation, TPN, severe thermal injury.
+
+Recommendation: Do NOT use empiric antifungal therapy in patients at low risk for fungal infection.
+Strength: Weak recommendation | Evidence: Low
+
+### Antibiotic Delivery
+
+Recommendation: Use prolonged infusion of beta-lactams for maintenance (after an initial bolus) over conventional bolus infusion in sepsis/septic shock.
+Strength: Weak recommendation | Evidence: Moderate
+Meta-analyses showed reduced mortality (RR 0.70; 95% CI 0.57-0.87). Must administer loading dose before prolonged infusion.
+
+Recommendation: Optimize dosing strategies based on accepted pharmacokinetic/pharmacodynamic (PK/PD) principles and specific drug properties.
+Strength: Best Practice Statement
+Requires consideration of kidney function, body weight, renal replacement therapy, and extracorporeal support.
 
 ### Source Control
-- Identify and treat the specific anatomic source of infection as rapidly as possible.
-- Remove intravascular access devices that are a possible source of sepsis promptly after other vascular access has been established.
+
+Recommendation: Rapidly identify or exclude a specific anatomical diagnosis of infection that requires emergent source control. Implement source control as soon as medically and logistically practical.
+Strength: Best Practice Statement
+Target: 6-12 hours after diagnosis. Amenable sources: intra-abdominal abscess, GI perforation, cholangitis, cholecystitis, pyelonephritis with obstruction, necrotizing soft tissue infection, device-related infections. Use least invasive effective option.
+
+Recommendation: Promptly remove intravascular access devices that are a possible source of sepsis after other vascular access has been established.
+Strength: Best Practice Statement
+
+### De-escalation and Duration
+
+Recommendation: Perform daily assessment for de-escalation of antimicrobials over fixed durations without daily reassessment.
+Strength: Weak recommendation | Evidence: Very Low
+Meta-analysis of 13 studies: improved mortality with de-escalation (RR 0.72; 95% CI 0.57-0.91). Associated with shorter hospital stay (MD -5.56 days; 95% CI -7.68 to -3.44).
+
+Recommendation: Use shorter over longer courses of antimicrobial therapy in sepsis patients with adequate source control and clinical improvement.
+Strength: Weak recommendation | Evidence: Low
+
+### Vasopressor Therapy
+
+Recommendation: Norepinephrine is the first-line vasopressor for septic shock (target MAP >= 65 mmHg).
+Strength: Strong recommendation | Evidence: Moderate
+
+Recommendation: Start vasopressors peripherally if central venous access is not yet available, rather than delaying initiation.
+Strength: Weak recommendation (NEW in 2021)
+Safe for short-term use (<6 hours) when infused through proximal vein. Enables faster BP goal achievement.
+
+Recommendation: Add vasopressin (up to 0.03 U/min) as second-line agent if MAP target not achieved with norepinephrine alone.
+Strength: Weak recommendation | Evidence: Moderate
+
+Recommendation: Add epinephrine as third-line vasopressor if needed.
+Strength: Weak recommendation | Evidence: Low
+
+Recommendation: Use dobutamine for patients with persistent hypoperfusion despite adequate fluid loading and vasopressor use (cardiac dysfunction).
+Strength: Weak recommendation | Evidence: Low
+
+Recommendation: Do NOT use dopamine except in highly selected patients (e.g., low risk of tachyarrhythmias with absolute or relative bradycardia).
+Strength: Strong recommendation | Evidence: High
+
+### Fluid Types
+
+Recommendation: Use crystalloids as the first-line fluid for resuscitation.
+Strength: Strong recommendation
+
+Recommendation: Use balanced crystalloids (e.g., Lactated Ringer's, Plasma-Lyte) over normal saline (0.9% NaCl).
+Strength: Weak recommendation (NEW in 2021)
+SMART trial showed lower 30-day mortality in sepsis subgroup with balanced fluids (OR 0.90).
+
+Recommendation: Use albumin in addition to crystalloids when patients require substantial volumes of crystalloids.
+Strength: Weak recommendation | Evidence: Low
+
+Recommendation: Do NOT use hydroxyethyl starches (HES) for volume replacement.
+Strength: Strong recommendation | Evidence: High
+Associated with increased mortality and acute kidney injury.
+
+Recommendation: Do NOT use gelatins for volume replacement.
+Strength: Weak recommendation | Evidence: Low
+Inconclusive mortality effects, increased adverse effects, higher costs.
+
+### Corticosteroids
+
+Recommendation: Use IV corticosteroids (e.g., hydrocortisone 200 mg/day) for septic shock patients with ongoing vasopressor requirement.
+Strength: Weak recommendation (CHANGED from 2016 recommendation against use)
+Multiple RCTs showed shortened shock duration. Mortality effects unclear. Desirable effects of shock resolution outweigh potential harms.
+
+Recommendation: Do NOT use corticosteroids for sepsis without shock.
+Strength: Weak recommendation
+
+### Vitamin C
+
+Recommendation: Do NOT use IV vitamin C for sepsis or septic shock.
+Strength: Weak recommendation (NEW in 2021)
+Meta-analysis found no benefit.
+
+### Blood Products
+
+Recommendation: Transfuse red blood cells only when hemoglobin concentration decreases to <7.0 g/dL in adults, in the absence of extenuating circumstances (myocardial ischemia, severe hypoxemia, acute hemorrhage).
+Strength: Strong recommendation | Evidence: Moderate
+
+Recommendation: Do NOT use erythropoietin for treatment of sepsis-related anemia.
+Strength: Strong recommendation
+
+Recommendation: Do NOT use fresh frozen plasma to correct clotting abnormalities in the absence of bleeding or planned invasive procedures.
+Strength: Weak recommendation | Evidence: Very Low
+
+### Mechanical Ventilation (Sepsis-Induced ARDS)
+
+Recommendation: Use low tidal volume ventilation (6 mL/kg predicted body weight) for sepsis-induced ARDS.
+Strength: Strong recommendation | Evidence: High
+
+Recommendation: Target plateau pressure <30 cm H2O.
+Strength: Strong recommendation | Evidence: Moderate
+
+Recommendation: Use higher PEEP over lower PEEP for moderate-to-severe ARDS (PaO2/FiO2 <200).
+Strength: Weak recommendation | Evidence: Moderate
+
+Recommendation: Use prone positioning for >12 hours/day in severe ARDS (PaO2/FiO2 <150).
+Strength: Strong recommendation | Evidence: Moderate
+
+Recommendation: Do NOT routinely use recruitment maneuvers.
+Strength: Strong recommendation against | Evidence: Moderate
+
+Recommendation: Use neuromuscular blocking agents (NMBA) for up to 48 hours in early severe ARDS if sedation alone insufficient.
+Strength: Weak recommendation | Evidence: Low
 
 ### Glucose Control
-- Use a protocolized approach to blood glucose management.
-- Commence insulin dosing when two consecutive blood glucose levels are > 180 mg/dL.
-- Target blood glucose ≤ 180 mg/dL rather than ≤ 110 mg/dL.
-- Monitor blood glucose every 1-2 hours until stable, then every 4 hours.
+
+Recommendation: Commence insulin dosing when two consecutive blood glucose levels are >180 mg/dL (10 mmol/L).
+Strength: Strong recommendation
+
+Recommendation: Target blood glucose <=180 mg/dL (10 mmol/L) rather than <=110 mg/dL (6.1 mmol/L).
+Strength: Strong recommendation | Evidence: High
+Tight glucose control associated with increased hypoglycemia without mortality benefit.
+
+Recommendation: Monitor blood glucose every 1-2 hours until stable, then every 4 hours in patients receiving insulin infusions.
+Strength: Best Practice Statement
 
 ### Renal Replacement Therapy
-- Use continuous or intermittent renal replacement therapy in sepsis patients with acute kidney injury.
-- Use continuous therapies to facilitate management of fluid balance in hemodynamically unstable patients.
 
-### DVT Prophylaxis
-- Use pharmacologic prophylaxis (unfractionated heparin or low-molecular-weight heparin) against venous thromboembolism unless contraindicated.
-- Use low-molecular-weight heparin over unfractionated heparin when possible.
+Recommendation: Use either continuous or intermittent renal replacement therapy in patients with sepsis and acute kidney injury.
+Strength: Weak recommendation | Evidence: Low
+
+Recommendation: Use continuous therapies to facilitate management of fluid balance in hemodynamically unstable patients.
+Strength: Weak recommendation | Evidence: Very Low
+
+### VTE Prophylaxis
+
+Recommendation: Use pharmacologic prophylaxis (unfractionated heparin or low-molecular-weight heparin) against venous thromboembolism (VTE) unless contraindicated.
+Strength: Strong recommendation | Evidence: Moderate
+
+Recommendation: Use low-molecular-weight heparin over unfractionated heparin for VTE prophylaxis when possible.
+Strength: Weak recommendation | Evidence: Low
 
 ### Stress Ulcer Prophylaxis
-- Give stress ulcer prophylaxis to patients with risk factors for GI bleeding.
-- Use proton pump inhibitors or H2 receptor antagonists.
+
+Recommendation: Give stress ulcer prophylaxis to sepsis patients with risk factors for GI bleeding.
+Strength: Weak recommendation | Evidence: Low
+Use proton pump inhibitors or H2 receptor antagonists.
 
 ### Nutrition
-- Initiate early enteral nutrition (within 72 hours) rather than parenteral nutrition or no nutrition.
-- Avoid mandatory full caloric feeding in the first week. Advance as tolerated.
 
-### Lactate as a Marker
-- Elevated lactate (> 2 mmol/L) is a key marker of tissue hypoperfusion in sepsis.
-- Serial lactate measurements guide resuscitation. Target: lactate normalization (clearance > 10% every 2 hours).
-- Lactate > 4 mmol/L is associated with high mortality risk.
+Recommendation: Initiate early enteral nutrition (within 72 hours) rather than parenteral nutrition alone or no nutrition.
+Strength: Weak recommendation | Evidence: Very Low
 
-### Vital Sign Thresholds Suggesting Sepsis Deterioration
-- Heart rate > 90 bpm (tachycardia)
-- Temperature > 38.3°C or < 36°C
-- Respiratory rate > 20 breaths/min
-- Systolic BP < 100 mmHg
-- MAP < 65 mmHg
-- SpO2 < 92%
-- Altered mental status
+Recommendation: Do NOT use mandatory full caloric feeding in the first week of sepsis. Advance as tolerated.
+Strength: Weak recommendation | Evidence: Moderate
 
-### Risk Factors for Sepsis
-- Age > 65 or very young (neonates)
-- Immunocompromised state (chemotherapy, organ transplant, HIV/AIDS)
-- Chronic diseases (diabetes, COPD, chronic kidney disease, liver disease)
-- Invasive devices (central lines, urinary catheters, mechanical ventilation)
-- Recent surgery or hospitalization
-- Burns or major trauma
+### Goals of Care and Long-term Outcomes (NEW in 2021)
 
-### Organ Dysfunction Indicators
-- Acute change in total SOFA score ≥ 2 points
-- Acute kidney injury: creatinine > 2.0 mg/dL or urine output < 0.5 mL/kg/hr for 6 hours
-- Hepatic dysfunction: bilirubin > 2 mg/dL
-- Coagulopathy: platelets < 100,000/μL or INR > 1.5
-- Respiratory failure: PaO2/FiO2 < 300
-- Cardiovascular: MAP < 70 mmHg or need for vasopressors
+Recommendation: Discuss goals of care and prognosis with patients and families within 72 hours of ICU admission.
+Strength: Best Practice Statement
 
-### Sepsis Screening Tools
-- SIRS criteria (≥ 2 of: temp > 38°C or < 36°C, HR > 90, RR > 20, WBC > 12k or < 4k)
-- qSOFA score (bedside: SBP ≤ 100, RR ≥ 22, altered mentation)
-- NEWS (National Early Warning Score)
-- MEWS (Modified Early Warning Score)
-- SOFA score (for ICU patients)
+Recommendation: Address goals of care early, not solely at end-of-life.
+Strength: Best Practice Statement
+
+Recommendation: Screen critically ill sepsis patients for economic and social support needs and make referrals as available.
+Strength: Best Practice Statement
+
+Recommendation: Assess patients for physical, cognitive, and emotional problems before hospital discharge and at follow-up.
+Strength: Weak recommendation | Evidence: Very Low
+
+Recommendation: Provide information on sepsis, its sequelae, and recovery expectations at hospital discharge and at follow-up.
+Strength: Weak recommendation | Evidence: Very Low
