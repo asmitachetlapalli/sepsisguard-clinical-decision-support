@@ -51,17 +51,18 @@ class SepsisLSTM(nn.Module):
         self.relu = nn.ReLU()
         self.dropout = nn.Dropout(dropout)
         self.fc2 = nn.Linear(32, 1)
-        self.sigmoid = nn.Sigmoid()
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, apply_sigmoid: bool = False) -> torch.Tensor:
         """
         Forward pass.
 
         Args:
             x: (batch_size, sequence_length, input_size)
+            apply_sigmoid: if True, apply sigmoid to output (use at inference).
+                           During training, use BCEWithLogitsLoss instead.
 
         Returns:
-            Risk scores (batch_size, 1), values in [0, 1].
+            Logits (batch_size, 1) or probabilities if apply_sigmoid=True.
         """
         # LSTM output: (batch_size, seq_len, hidden_size)
         lstm_out, _ = self.lstm(x)
@@ -72,7 +73,9 @@ class SepsisLSTM(nn.Module):
         out = self.relu(out)
         out = self.dropout(out)
         out = self.fc2(out)
-        out = self.sigmoid(out)
+
+        if apply_sigmoid:
+            out = torch.sigmoid(out)
 
         return out  # (batch_size, 1)
 

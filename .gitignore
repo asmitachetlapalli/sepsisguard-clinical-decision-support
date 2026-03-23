@@ -15,3 +15,7 @@ venv/
 # Outputs / artifacts
 data/processed/
 models/*.pkl
+models/*.pth
+
+# RAG vector store
+rag/chroma_db/
