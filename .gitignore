@@ -19,3 +19,6 @@ models/*.pth
 
 # RAG vector store
 rag/chroma_db/
+
+# Environment variables
+.env

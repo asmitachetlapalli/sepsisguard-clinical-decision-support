@@ -13,8 +13,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+load_dotenv(PROJECT_ROOT / ".env")
 sys.path.insert(0, str(PROJECT_ROOT / "rag"))
 
 st.set_page_config(page_title="SepsisGuard", page_icon="🏥", layout="wide")
