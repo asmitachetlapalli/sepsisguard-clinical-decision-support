@@ -1,0 +1,126 @@
+## Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock (2021)
+
+### Definition
+Sepsis is a life-threatening organ dysfunction caused by a dysregulated host response to infection. Septic shock is a subset of sepsis with circulatory and cellular/metabolic dysfunction associated with a higher risk of mortality.
+
+### Early Recognition Criteria (qSOFA)
+- Systolic blood pressure ≤ 100 mmHg
+- Respiratory rate ≥ 22 breaths/min
+- Altered mental status (Glasgow Coma Scale < 15)
+A qSOFA score ≥ 2 suggests possible sepsis and warrants further investigation.
+
+### SOFA Score Components
+- PaO2/FiO2 ratio (respiratory)
+- Platelet count (coagulation)
+- Bilirubin level (liver)
+- Mean arterial pressure or vasopressor requirement (cardiovascular)
+- Glasgow Coma Scale (neurological)
+- Creatinine or urine output (renal)
+
+### Hour-1 Bundle (Initial Resuscitation)
+1. Measure lactate level. Re-measure lactate if initial lactate is elevated (> 2 mmol/L).
+2. Obtain blood cultures before administering antibiotics.
+3. Administer broad-spectrum antibiotics within 1 hour of recognition.
+4. Begin rapid administration of 30 mL/kg crystalloid for hypotension or lactate ≥ 4 mmol/L.
+5. Apply vasopressors if patient is hypotensive during or after fluid resuscitation to maintain MAP ≥ 65 mmHg.
+
+### Antibiotic Therapy
+- Administer IV antimicrobials as soon as possible, ideally within 1 hour of sepsis recognition.
+- Use empiric broad-spectrum therapy with one or more antimicrobials to cover all likely pathogens.
+- Narrow antimicrobial therapy once pathogen identification and sensitivities are established.
+- Suggest daily assessment for de-escalation of antimicrobial therapy.
+- Typical duration of therapy: 7-10 days for most infections.
+
+### Fluid Resuscitation
+- Use crystalloids as the fluid of choice for initial resuscitation and subsequent volume replacement.
+- Suggested initial bolus: 30 mL/kg of IV crystalloid fluid within the first 3 hours.
+- Use balanced crystalloids (e.g., Lactated Ringer's) over normal saline.
+- Albumin may be used in addition to crystalloids when patients require substantial amounts of crystalloids.
+- Avoid hydroxyethyl starches (HES).
+
+### Vasopressor Therapy
+- First-line vasopressor: Norepinephrine (target MAP ≥ 65 mmHg).
+- Add vasopressin (up to 0.03 U/min) as second-line agent if MAP target not achieved.
+- Add epinephrine as third-line agent if needed.
+- Use dobutamine for patients with persistent hypoperfusion despite adequate fluid loading and vasopressor use.
+- Avoid dopamine except in highly selected patients (e.g., bradycardia).
+
+### Corticosteroids
+- Suggest IV hydrocortisone (200 mg/day) for septic shock patients who require ongoing vasopressor therapy.
+- Do not use corticosteroids for sepsis without shock.
+
+### Blood Products
+- Transfuse red blood cells only when hemoglobin concentration decreases to < 7.0 g/dL in adults (in the absence of extenuating circumstances such as myocardial ischemia, severe hypoxemia, or acute hemorrhage).
+- Do not use erythropoietin for treatment of sepsis-related anemia.
+- Do not use fresh frozen plasma to correct clotting abnormalities in the absence of bleeding or planned invasive procedures.
+
+### Mechanical Ventilation (for Sepsis-Induced ARDS)
+- Use low tidal volume ventilation (6 mL/kg predicted body weight).
+- Target plateau pressure < 30 cm H2O.
+- Use higher PEEP over lower PEEP for moderate-severe ARDS.
+- Use prone positioning for > 12 hours/day in severe ARDS (PaO2/FiO2 < 150).
+- Avoid routine use of high-frequency oscillatory ventilation.
+- Use neuromuscular blocking agents for ≤ 48 hours in early severe ARDS.
+
+### Source Control
+- Identify and treat the specific anatomic source of infection as rapidly as possible.
+- Remove intravascular access devices that are a possible source of sepsis promptly after other vascular access has been established.
+
+### Glucose Control
+- Use a protocolized approach to blood glucose management.
+- Commence insulin dosing when two consecutive blood glucose levels are > 180 mg/dL.
+- Target blood glucose ≤ 180 mg/dL rather than ≤ 110 mg/dL.
+- Monitor blood glucose every 1-2 hours until stable, then every 4 hours.
+
+### Renal Replacement Therapy
+- Use continuous or intermittent renal replacement therapy in sepsis patients with acute kidney injury.
+- Use continuous therapies to facilitate management of fluid balance in hemodynamically unstable patients.
+
+### DVT Prophylaxis
+- Use pharmacologic prophylaxis (unfractionated heparin or low-molecular-weight heparin) against venous thromboembolism unless contraindicated.
+- Use low-molecular-weight heparin over unfractionated heparin when possible.
+
+### Stress Ulcer Prophylaxis
+- Give stress ulcer prophylaxis to patients with risk factors for GI bleeding.
+- Use proton pump inhibitors or H2 receptor antagonists.
+
+### Nutrition
+- Initiate early enteral nutrition (within 72 hours) rather than parenteral nutrition or no nutrition.
+- Avoid mandatory full caloric feeding in the first week. Advance as tolerated.
+
+### Lactate as a Marker
+- Elevated lactate (> 2 mmol/L) is a key marker of tissue hypoperfusion in sepsis.
+- Serial lactate measurements guide resuscitation. Target: lactate normalization (clearance > 10% every 2 hours).
+- Lactate > 4 mmol/L is associated with high mortality risk.
+
+### Vital Sign Thresholds Suggesting Sepsis Deterioration
+- Heart rate > 90 bpm (tachycardia)
+- Temperature > 38.3°C or < 36°C
+- Respiratory rate > 20 breaths/min
+- Systolic BP < 100 mmHg
+- MAP < 65 mmHg
+- SpO2 < 92%
+- Altered mental status
+
+### Risk Factors for Sepsis
+- Age > 65 or very young (neonates)
+- Immunocompromised state (chemotherapy, organ transplant, HIV/AIDS)
+- Chronic diseases (diabetes, COPD, chronic kidney disease, liver disease)
+- Invasive devices (central lines, urinary catheters, mechanical ventilation)
+- Recent surgery or hospitalization
+- Burns or major trauma
+
+### Organ Dysfunction Indicators
+- Acute change in total SOFA score ≥ 2 points
+- Acute kidney injury: creatinine > 2.0 mg/dL or urine output < 0.5 mL/kg/hr for 6 hours
+- Hepatic dysfunction: bilirubin > 2 mg/dL
+- Coagulopathy: platelets < 100,000/μL or INR > 1.5
+- Respiratory failure: PaO2/FiO2 < 300
+- Cardiovascular: MAP < 70 mmHg or need for vasopressors
+
+### Sepsis Screening Tools
+- SIRS criteria (≥ 2 of: temp > 38°C or < 36°C, HR > 90, RR > 20, WBC > 12k or < 4k)
+- qSOFA score (bedside: SBP ≤ 100, RR ≥ 22, altered mentation)
+- NEWS (National Early Warning Score)
+- MEWS (Modified Early Warning Score)
+- SOFA score (for ICU patients)
