@@ -1,8 +1,7 @@
 # SepsisGuard: Intelligent Clinical Decision Support System
 
 ## Project Overview
-AI-powered early sepsis detection combining LSTM time-series prediction with RAG-based explainable recommendations for ICU settings.
-
+AI-powered early sepsis detection combining XGBoost prediction with RAG-based explainable recommendations for ICU settings.
 
 ## Objective
 Predict sepsis onset 4-6 hours before clinical diagnosis with AUROC > 0.75, providing evidence-based treatment recommendations through retrieval-augmented generation.
@@ -21,11 +20,11 @@ Predict sepsis onset 4-6 hours before clinical diagnosis with AUROC > 0.75, prov
 - Early warning label creation (6-hour prediction window)
 - Baseline model training (Logistic Regression)
 
-### Phase 2 - LSTM Training
-- LSTM architecture with temporal feature engineering (deltas, rolling means)
-- Training pipeline with weighted sampling for class imbalance
-- Early stopping and cosine annealing learning rate schedule
-- 8-hour sliding window sequences with 22 engineered features
+### Phase 2 - XGBoost Model
+- XGBoost classifier with 21 features (vitals + labs + demographics)
+- Class imbalance handling via scale_pos_weight
+- Early stopping on validation AUROC
+- Feature importance analysis
 
 ### Phase 3 - RAG Pipeline
 - ChromaDB vector database with Surviving Sepsis Campaign 2021 guidelines
@@ -40,18 +39,18 @@ Predict sepsis onset 4-6 hours before clinical diagnosis with AUROC > 0.75, prov
 
 ### Current Results
 
-| Model | Features | AUROC | Parameters | Status |
-|-------|----------|-------|------------|--------|
-| **Logistic Regression** | Current vitals (6 features) | **0.7074** | - | Complete |
-| **LSTM** | 8-hour sequences (22 temporal features) | **0.6574** | 8,257 | Complete |
-| **Random Forest** | Current vitals (6 features) | 0.5955 | - | Overfitting |
-| **Target** | - | **> 0.75** | - | Goal |
+| Model | Features | AUROC | Status |
+|-------|----------|-------|--------|
+| **XGBoost** | 21 (vitals + labs + demographics) | **0.80** | Primary model |
+| **Logistic Regression** | 6 (vitals only) | **0.71** | Baseline |
+| **Target** | - | **> 0.75** | Achieved |
 
 ### Key Findings
 - **Sepsis prevalence**: 9% of patients (90/1000) - realistic clinical distribution
 - **Class imbalance**: 1.16% positive samples (450/38,809 hours)
-- **Baseline performance**: LR achieves 0.71 AUROC with 69% recall - outperforms LSTM on small dataset
-- **LSTM insight**: Deep learning underperforms LR with only 90 sepsis patients; scaling to full 40K dataset expected to improve results significantly
+- **XGBoost** achieves 0.80 AUROC using 21 features with nonlinear tree-based splits
+- **LR baseline** achieves 0.71 AUROC with 6 clean vital features — adding 21 features hurts it (0.68) since linear models can't handle noisy lab values
+- **Top features**: ICULOS, Resp, pH, DBP, Lactate, Age
 - **Missing data**: 21% reduction after preprocessing (forward-fill vitals, median imputation labs)
 
 ## Technical Architecture
@@ -62,13 +61,12 @@ Predict sepsis onset 4-6 hours before clinical diagnosis with AUROC > 0.75, prov
 3. **Output**: Clean dataset ready for ML training
 
 ### Models
-- **Baseline**: Logistic Regression (current vitals only)
-- **Advanced**: LSTM with temporal features
-  - 1-layer LSTM (32 hidden units)
-  - Temporal features: vital sign deltas + 3-hour rolling means
-  - Weighted random sampling for class imbalance
-  - Dropout regularization (0.5)
-  - Sigmoid output (risk probability)
+- **Baseline**: Logistic Regression (6 vital sign features, class_weight=balanced)
+- **Primary**: XGBoost (21 features)
+  - 500 estimators, max_depth=3
+  - scale_pos_weight for class imbalance
+  - Early stopping on validation AUC
+  - Feature importance via gain
 
 ### RAG Pipeline
 1. **Knowledge Base**: Surviving Sepsis Campaign 2021 guidelines (22 chunks)
@@ -93,8 +91,8 @@ python data/preprocess.py
 
 ### Train Models
 ```bash
-python models/baseline_lr.py    # Logistic Regression
-python models/train_lstm.py     # LSTM
+python models/baseline_lr.py       # Logistic Regression
+python models/train_xgboost.py     # XGBoost
 ```
 
 ### Build RAG Database
@@ -124,9 +122,8 @@ sepsisguard-clinical-decision-support/
 ├── models/
 │   ├── baseline_lr.py              # LR baseline training
 │   ├── baseline_lr.pkl             # Trained LR model
-│   ├── lstm_model.py               # LSTM architecture (PyTorch)
-│   ├── train_lstm.py               # LSTM training pipeline
-│   └── lstm_trained.pth            # Trained LSTM model
+│   ├── train_xgboost.py            # XGBoost training pipeline
+│   └── xgboost_model.pkl           # Trained XGBoost model
 ├── rag/
 │   ├── sepsis_guidelines.txt       # Surviving Sepsis Campaign guidelines
 │   ├── build_vectordb.py           # ChromaDB builder
@@ -134,7 +131,7 @@ sepsisguard-clinical-decision-support/
 │   └── chroma_db/                  # Persistent vector store
 └── results/
     ├── baseline_lr_roc.png         # LR ROC curve
-    └── lstm_roc.png                # LSTM ROC curve + score distribution
+    └── xgboost_results.png         # XGBoost ROC curve + feature importance
 ```
 
 **Note:** PhysioNet .psv data lives under an external path (`training_setA` / `training_setB`); configure `DATA_ROOT` or the path in `preprocess.py` / `explore_data.py` to point to your data directory.
