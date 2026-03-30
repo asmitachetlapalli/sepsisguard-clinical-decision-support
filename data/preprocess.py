@@ -154,18 +154,44 @@ def create_early_warning_labels(df: pd.DataFrame, lead_time_hours: int = 6) -> p
 
 
 def main() -> None:
-    data_dir = Path(
-        "/Users/sujandm/Desktop/sepsisguard-clinical-decision-support/data/archive/training_setA"
-    )
+    project_root = Path(__file__).resolve().parent.parent
+    data_dirs = [
+        project_root / "data" / "archive" / "training_setA",
+        project_root / "data" / "archive" / "training_setB",
+    ]
+
+    max_patients = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
 
     print("Starting preprocessing pipeline...")
-    print(f"Data directory: {data_dir}\n")
+    print(f"Max patients: {max_patients}\n")
 
-    try:
-        df = load_multiple_patients(data_dir, max_patients=1000)
-    except (FileNotFoundError, ValueError) as e:
-        print(f"Error loading data: {e}")
+    frames = []
+    patients_loaded = 0
+    for data_dir in data_dirs:
+        if not data_dir.exists():
+            print(f"Skipping {data_dir} (not found)")
+            continue
+        remaining = max_patients - patients_loaded
+        if remaining <= 0:
+            break
+        try:
+            df_part = load_multiple_patients(data_dir, max_patients=remaining)
+            patients_loaded += df_part["patient_id"].nunique()
+            frames.append(df_part)
+        except (FileNotFoundError, ValueError) as e:
+            print(f"Warning: {data_dir}: {e}")
+
+    if not frames:
+        print("Error: No data loaded from any directory.")
         sys.exit(1)
+
+    # Offset patient IDs so they don't collide across sets
+    if len(frames) > 1:
+        offset = 0
+        for f in frames:
+            f["patient_id"] = f["patient_id"] + offset
+            offset += f["patient_id"].max() + 1
+    df = pd.concat(frames, ignore_index=True)
 
     print(f"Combined data shape: {df.shape}\n")
 
@@ -174,7 +200,8 @@ def main() -> None:
 
     out_dir = Path(__file__).resolve().parent.parent / "data" / "processed"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "preprocessed_1000.csv"
+    n_patients = df["patient_id"].nunique()
+    out_path = out_dir / f"preprocessed_{n_patients}.csv"
 
     try:
         df.to_csv(out_path, index=False)

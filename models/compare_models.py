@@ -21,7 +21,9 @@ import matplotlib.pyplot as plt
 
 def main():
     project_root = Path(__file__).resolve().parent.parent
-    data_path = project_root / "data" / "processed" / "preprocessed_1000.csv"
+    processed_dir = project_root / "data" / "processed"
+    csvs = sorted(processed_dir.glob("preprocessed_*.csv"), key=lambda p: int(p.stem.split("_")[1]), reverse=True)
+    data_path = csvs[0] if csvs else processed_dir / "preprocessed_1000.csv"
 
     if not data_path.exists():
         print(f"Error: {data_path} not found.")

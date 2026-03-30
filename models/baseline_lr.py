@@ -30,7 +30,9 @@ def get_project_root() -> Path:
 
 def main() -> None:
     project_root = get_project_root()
-    data_path = project_root / "data" / "processed" / "preprocessed_1000.csv"
+    processed_dir = project_root / "data" / "processed"
+    csvs = sorted(processed_dir.glob("preprocessed_*.csv"), key=lambda p: p.stat().st_size, reverse=True)
+    data_path = csvs[0] if csvs else processed_dir / "preprocessed_1000.csv"
 
     print("=" * 60)
     print("Logistic Regression Baseline - Early Sepsis Prediction")
