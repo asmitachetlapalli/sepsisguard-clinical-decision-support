@@ -130,6 +130,12 @@ with tab1:
 
     if st.button("Assess Sepsis Risk", type="primary", use_container_width=True):
 
+        # ── Build feature vector (base + temporal) ──────────────────
+        # For single-point input: deltas=0, rolling=current value
+        for col in ["HR", "O2Sat", "Temp", "MAP", "Resp", "SBP", "DBP"]:
+            patient[f"{col}_delta"] = 0.0
+            patient[f"{col}_roll3"] = patient.get(col, 0)
+
         # ── Risk Scores ─────────────────────────────────────────────
         scores = {}
 
@@ -138,7 +144,6 @@ with tab1:
             X = np.array([[patient.get(c, 0) for c in xgb_data["feature_cols"]]])
             scores["XGBoost"] = float(xgb_data["model"].predict_proba(X)[0][1])
 
-        # LR (baseline)
         if "lr" in models:
             lr_data = models["lr"]
             X = np.array([[patient.get(c, 0) for c in lr_data["feature_cols"]]])
@@ -252,11 +257,11 @@ with tab2:
     st.markdown("""
     **SepsisGuard** is an AI-powered clinical decision support system for early sepsis detection.
 
-    ### Models (trained on 40,336 ICU patients, 21 features each)
+    ### Models (trained on 40,336 ICU patients, 30 features each)
     | Model | Features | AUROC | Role |
     |-------|----------|-------|------|
-    | **XGBoost** | 21 (vitals + labs + demographics) | **0.70** | Primary |
-    | **Logistic Regression** | 21 (vitals + labs + demographics) | **0.61** | Baseline |
+    | **XGBoost** | 30 (vitals + labs + demographics + temporal) | **0.81** | Primary |
+    | **Logistic Regression** | 30 (same features) | **0.72** | Baseline |
 
     ### RAG Pipeline
     Retrieves relevant Surviving Sepsis Campaign 2021 guidelines and generates
