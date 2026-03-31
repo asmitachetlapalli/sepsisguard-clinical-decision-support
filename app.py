@@ -8,11 +8,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import joblib
-import torch
 from dotenv import load_dotenv
-
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parent / "models"))
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 load_dotenv(PROJECT_ROOT / ".env", override=True)
@@ -32,28 +28,10 @@ st.set_page_config(page_title="SepsisGuard", page_icon="🏥", layout="wide")
 @st.cache_resource
 def load_models():
     models = {}
-    # LSTM (primary)
-    lstm_path = PROJECT_ROOT / "models" / "lstm_trained.pth"
-    if lstm_path.exists():
-        from lstm_model import SepsisLSTM
-        ckpt = torch.load(lstm_path, map_location="cpu", weights_only=False)
-        lstm = SepsisLSTM(
-            input_size=len(ckpt["feature_cols"]),
-            hidden_size=ckpt["hidden_size"],
-            num_layers=ckpt["num_layers"],
-            dropout=ckpt["dropout"],
-        )
-        lstm.load_state_dict(ckpt["model_state_dict"])
-        lstm.eval()
-        models["lstm"] = {"model": lstm, **ckpt}
-
-    # XGBoost
     xgb_path = PROJECT_ROOT / "models" / "xgboost_model.pkl"
+    lr_path = PROJECT_ROOT / "models" / "baseline_lr.pkl"
     if xgb_path.exists():
         models["xgb"] = joblib.load(xgb_path)
-
-    # LR (baseline)
-    lr_path = PROJECT_ROOT / "models" / "baseline_lr.pkl"
     if lr_path.exists():
         models["lr"] = joblib.load(lr_path)
     return models
@@ -99,10 +77,6 @@ with st.sidebar:
 
     st.divider()
     st.header("Model Status")
-    if "lstm" in models:
-        st.success(f"LSTM loaded (AUROC: {models['lstm'].get('best_auroc', 0):.4f}) — Primary")
-    else:
-        st.warning("LSTM not found")
     if "xgb" in models:
         st.success(f"XGBoost loaded (AUROC: {models['xgb'].get('auroc', 0):.4f})")
     else:
@@ -159,22 +133,6 @@ with tab1:
         # ── Risk Scores ─────────────────────────────────────────────
         scores = {}
 
-        # LSTM (primary)
-        if "lstm" in models:
-            lstm_data = models["lstm"]
-            feature_cols = lstm_data["feature_cols"]
-            scaler_mean = np.array(lstm_data["scaler_mean"])
-            scaler_scale = np.array(lstm_data["scaler_scale"])
-            seq_len = lstm_data["seq_len"]
-
-            raw = np.array([patient.get(c, 0) for c in feature_cols], dtype=np.float32)
-            normalized = (raw - scaler_mean) / scaler_scale
-            seq = np.tile(normalized, (seq_len, 1))
-            tensor = torch.FloatTensor(seq).unsqueeze(0)
-            with torch.no_grad():
-                scores["LSTM"] = float(lstm_data["model"](tensor, apply_sigmoid=True).item())
-
-        # XGBoost
         if "xgb" in models:
             xgb_data = models["xgb"]
             X = np.array([[patient.get(c, 0) for c in xgb_data["feature_cols"]]])
@@ -316,9 +274,12 @@ with tab3:
     ### Models (trained on 40,336 ICU patients)
     | Model | Features | AUROC | Role |
     |-------|----------|-------|------|
-    | **LSTM** | 21 (24hr sequences) | **0.83** | Primary |
-    | **XGBoost** | 21 (snapshots) | **0.70** | Secondary |
+    | **XGBoost** | 21 (vitals + labs + demographics) | **0.70** | Primary (dashboard) |
+    | **LSTM** | 21 (24hr sequences) | **0.83** | Best on time-series data |
     | **Logistic Regression** | 6 (vitals only) | **0.59** | Baseline |
+
+    *Note: LSTM achieves the highest AUROC but requires 24-hour patient sequences.
+    The dashboard uses XGBoost for single-timepoint assessment.*
 
     ### RAG Pipeline
     Retrieves relevant Surviving Sepsis Campaign 2021 guidelines and generates
