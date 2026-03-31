@@ -95,7 +95,7 @@ with st.sidebar:
         st.warning("No Gemini API key")
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["Patient Assessment", "Batch Analysis", "About"])
+tab1, tab2 = st.tabs(["Patient Assessment", "About"])
 
 with tab1:
     st.header("Patient Vital Signs")
@@ -248,38 +248,15 @@ Provide concise bullet-point recommendations. Note this is AI-generated and requ
             st.caption("⚠️ AI-generated clinical decision support. All recommendations require physician review.")
 
 with tab2:
-    st.header("Batch Patient Analysis")
-    st.write("Upload a CSV with patient vitals.")
-    uploaded = st.file_uploader("Upload CSV", type=["csv"])
-    if uploaded:
-        batch_df = pd.read_csv(uploaded)
-        st.dataframe(batch_df.head(), use_container_width=True)
-        if st.button("Run Batch Assessment") and "xgb" in models:
-            xgb_data = models["xgb"]
-            X = batch_df.reindex(columns=xgb_data["feature_cols"], fill_value=0).values
-            batch_df["risk_score"] = xgb_data["model"].predict_proba(X)[:, 1]
-            batch_df["risk_level"] = pd.cut(batch_df["risk_score"], bins=[0, 0.4, 0.7, 1.0],
-                                            labels=["LOW", "MODERATE", "HIGH"])
-            st.dataframe(batch_df, use_container_width=True)
-            c1, c2, c3 = st.columns(3)
-            c1.metric("Total", len(batch_df))
-            c2.metric("High Risk", (batch_df["risk_level"] == "HIGH").sum())
-            c3.metric("Moderate Risk", (batch_df["risk_level"] == "MODERATE").sum())
-
-with tab3:
     st.header("About SepsisGuard")
     st.markdown("""
     **SepsisGuard** is an AI-powered clinical decision support system for early sepsis detection.
 
-    ### Models (trained on 40,336 ICU patients)
+    ### Models (trained on 40,336 ICU patients, 21 features each)
     | Model | Features | AUROC | Role |
     |-------|----------|-------|------|
-    | **XGBoost** | 21 (vitals + labs + demographics) | **0.70** | Primary (dashboard) |
-    | **LSTM** | 21 (24hr sequences) | **0.83** | Best on time-series data |
-    | **Logistic Regression** | 6 (vitals only) | **0.59** | Baseline |
-
-    *Note: LSTM achieves the highest AUROC but requires 24-hour patient sequences.
-    The dashboard uses XGBoost for single-timepoint assessment.*
+    | **XGBoost** | 21 (vitals + labs + demographics) | **0.70** | Primary |
+    | **Logistic Regression** | 21 (vitals + labs + demographics) | **0.61** | Baseline |
 
     ### RAG Pipeline
     Retrieves relevant Surviving Sepsis Campaign 2021 guidelines and generates

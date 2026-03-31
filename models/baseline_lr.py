@@ -56,7 +56,10 @@ def main() -> None:
     print()
 
     # 2. Prepare features
-    feature_cols = ["HR", "O2Sat", "Temp", "MAP", "Resp", "Age"]
+    feature_cols = ["HR", "O2Sat", "Temp", "SBP", "DBP", "MAP", "Resp",
+                     "Lactate", "WBC", "Creatinine", "Bilirubin_total", "Platelets",
+                     "BUN", "Glucose", "Hgb", "Hct", "pH",
+                     "Age", "Gender", "HospAdmTime", "ICULOS"]
     target_col = "early_sepsis_label"
 
     missing = [c for c in feature_cols if c not in df.columns]
@@ -71,9 +74,12 @@ def main() -> None:
         print(f"Error: Target column '{target_col}' not found.")
         sys.exit(1)
 
-    df_clean = df[feature_cols + [target_col, "patient_id"]].dropna(
-        subset=feature_cols
-    )
+    # Fill NaN with median (same as XGBoost for fair comparison)
+    for col in feature_cols:
+        if col in df.columns:
+            df[col] = df[col].fillna(df[col].median())
+
+    df_clean = df[feature_cols + [target_col, "patient_id"]].copy()
     X = df_clean[feature_cols]
     y = df_clean[target_col]
 
