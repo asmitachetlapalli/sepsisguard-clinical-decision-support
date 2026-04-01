@@ -144,10 +144,7 @@ with tab1:
             X = np.array([[patient.get(c, 0) for c in xgb_data["feature_cols"]]])
             scores["XGBoost"] = float(xgb_data["model"].predict_proba(X)[0][1])
 
-        if "lr" in models:
-            lr_data = models["lr"]
-            X = np.array([[patient.get(c, 0) for c in lr_data["feature_cols"]]])
-            scores["Logistic Regression"] = float(lr_data["model"].predict_proba(X)[0][1])
+        # LR kept for evaluation only, not shown on dashboard
 
         if not scores:
             st.error("No models available.")
@@ -156,11 +153,9 @@ with tab1:
             primary_risk = scores[primary]
 
             # Get risk thresholds from XGBoost model (or use defaults)
-            if "xgb" in models:
-                t_low = models["xgb"].get("risk_threshold_low", 0.4)
-                t_high = models["xgb"].get("risk_threshold_high", 0.7)
-            else:
-                t_low, t_high = 0.4, 0.7
+            # Clinically meaningful thresholds (validated via scenario evaluation)
+            t_low = 0.15   # below 15% = LOW
+            t_high = 0.35  # above 35% = HIGH
 
             st.subheader("Risk Assessment")
             risk_cols = st.columns(len(scores))
