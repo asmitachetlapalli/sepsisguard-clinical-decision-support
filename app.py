@@ -149,7 +149,7 @@ with tab1:
         if not scores:
             st.error("No models available.")
         else:
-            primary = list(scores.keys())[0]  # LSTM first if available
+            primary = list(scores.keys())[0]
             primary_risk = scores[primary]
 
             # Get risk thresholds from XGBoost model (or use defaults)

@@ -10,3 +10,5 @@ sentence-transformers>=2.2
 google-genai>=1.0
 streamlit>=1.28
 python-dotenv>=1.0
+shap>=0.44
+optuna>=3.0
