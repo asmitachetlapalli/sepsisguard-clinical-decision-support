@@ -166,6 +166,56 @@ with tab1:
                     label = f"{name} {'(Primary)' if name == primary else '(Baseline)'}"
                     st.metric(label, f"{c} {score:.1%}", lv)
 
+            # ── SHAP Explanation ────────────────────────────────────
+            if "xgb" in models:
+                st.subheader("Why This Prediction? (SHAP)")
+                try:
+                    import shap
+                    xgb_model = models["xgb"]["model"]
+                    feature_names = models["xgb"]["feature_cols"]
+                    X_df = pd.DataFrame([patient.get(c, 0) for c in feature_names],
+                                        index=feature_names, columns=["value"]).T
+                    explainer = shap.TreeExplainer(xgb_model)
+                    shap_values = explainer.shap_values(X_df)
+
+                    # Get top contributing features
+                    sv = shap_values[0]
+                    indices = np.argsort(np.abs(sv))[::-1][:10]
+
+                    # Build display
+                    shap_data = []
+                    for idx in indices:
+                        name = feature_names[idx]
+                        val = sv[idx]
+                        direction = "Increases risk" if val > 0 else "Decreases risk"
+                        shap_data.append({
+                            "Feature": name,
+                            "Value": f"{X_df.iloc[0, idx]:.1f}",
+                            "Impact": f"{'+' if val > 0 else ''}{val:.3f}",
+                            "Direction": direction,
+                        })
+
+                    shap_df = pd.DataFrame(shap_data)
+                    st.dataframe(shap_df, use_container_width=True, hide_index=True)
+
+                    # Bar chart
+                    import matplotlib.pyplot as plt
+                    fig, ax = plt.subplots(figsize=(8, 4))
+                    top_names = [feature_names[i] for i in indices[:10]][::-1]
+                    top_vals = [sv[i] for i in indices[:10]][::-1]
+                    colors = ["#e74c3c" if v > 0 else "#2ecc71" for v in top_vals]
+                    ax.barh(top_names, top_vals, color=colors)
+                    ax.set_xlabel("SHAP Value (impact on prediction)")
+                    ax.set_title("Top 10 Feature Contributions")
+                    ax.axvline(0, color="black", linewidth=0.5)
+                    ax.grid(alpha=0.3, axis="x")
+                    plt.tight_layout()
+                    st.pyplot(fig)
+                    plt.close()
+
+                except Exception as e:
+                    st.warning(f"SHAP unavailable: {e}")
+
             # ── Vital Sign Flags ────────────────────────────────────
             st.subheader("Vital Sign Flags")
             flags = []

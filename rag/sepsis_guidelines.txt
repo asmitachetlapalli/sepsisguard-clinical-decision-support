@@ -272,3 +272,78 @@ Strength: Weak recommendation | Evidence: Very Low
 
 Recommendation: Provide information on sepsis, its sequelae, and recovery expectations at hospital discharge and at follow-up.
 Strength: Weak recommendation | Evidence: Very Low
+
+
+## 2023 Update: Emergency Department Management of Sepsis and Septic Shock
+## Source: Guarino et al., Journal of Clinical Medicine, 2023;12(9):3188
+
+### Emergency Department Antimicrobial Protocols
+
+Recommendation: Obtain microbiological samples as soon as possible on ED admission before starting antibiotics.
+Recommendation: Administer empiric broad-spectrum antimicrobials within 1 hour for suspected sepsis with or without shock.
+Recommendation: Administer within 3 hours for low-to-moderate risk patients without shock.
+Recommendation: Use multidrug regimens for septic shock covering MRSA, ESBL, Pseudomonas, and Candida based on local resistance patterns and patient risk factors.
+Recommendation: De-escalate antimicrobials daily based on culture results and clinical response.
+Recommendation: Procalcitonin (PCT) is less effective than clinical judgment alone for initiation decisions but may guide treatment duration.
+Recommendation: Presepsin (PSP) offers higher diagnostic accuracy than PCT but has limited availability.
+
+### Emergency Department Fluid Management (2023 Update)
+
+Recommendation: Use balanced crystalloids as the fluid of choice for sepsis resuscitation.
+Recommendation: Avoid colloids due to increased risk of acute kidney injury (AKI).
+Recommendation: Albumin provides no mortality benefit over crystalloids.
+Recommendation: Use individualized fluid strategy based on fluid tolerance and fluid responsiveness.
+Recommendation: Administer small, repeated boluses (250-500 mL) with continuous hemodynamic monitoring rather than large fixed volumes.
+Recommendation: Avoid fluid overload as excessive volumes damage the endothelial glycocalyx.
+Recommendation: Use dynamic assessment tools: passive leg raise, stroke volume variation, IVC collapsibility index.
+Recommendation: Static measures (heart rate, central venous pressure, systolic blood pressure) are poor indicators of fluid status.
+
+### Emergency Department Vasopressor Protocols (2023 Update)
+
+Recommendation: Norepinephrine remains first-line vasopressor. Dosing: 0.1-1.2 mcg/kg/min. Target MAP >= 65 mmHg.
+Recommendation: Early norepinephrine administration prevents fluid overload and reduces mortality.
+Recommendation: Add vasopressin (0.25-0.5 mcg/kg/min) as second-line if MAP target not achieved with norepinephrine.
+Recommendation: Vasopressin may reduce need for renal replacement therapy but does not decrease mortality independently.
+Recommendation: Reserve epinephrine for refractory shock despite norepinephrine + vasopressin. Greater beta-adrenergic effects; higher risk of tachycardia and arrhythmia.
+Recommendation: Permissive hypotension (MAP 60-65 mmHg) is acceptable in patients aged 65 and older. Higher targets do not provide additional benefit.
+
+### Emergency Department Oxygenation Protocols
+
+Recommendation: Start supplemental oxygen at 15 L/min via reservoir mask for acute sepsis.
+Recommendation: Target SpO2 94-98% (or 88-92% if risk of hypercapnia, e.g., COPD).
+Recommendation: High-flow nasal cannula (HFNC) is recommended for hypoxic respiratory failure over non-invasive ventilation.
+Recommendation: HFNC provides benefits during weaning and preventing reintubation but requires close monitoring.
+Recommendation: Low tidal volume ventilation (6 mL/kg predicted body weight) is preferred over 10 mL/kg.
+
+### Additional ED Interventions (2023 Update)
+
+Recommendation: Use LMWH over unfractionated heparin for VTE prophylaxis. Mechanical prophylaxis if anticoagulation is contraindicated.
+Recommendation: Target glucose 144-180 mg/dL using insulin infusion. Avoid oral hypoglycemic agents in sepsis.
+Recommendation: Consider sodium bicarbonate for severe metabolic acidosis (pH < 7.1, bicarbonate < 5 mEq/L) and patients with AKI stage 2-3.
+Recommendation: Acetaminophen for symptomatic fever only — no outcome improvement demonstrated.
+Recommendation: Renal replacement therapy is not indicated by sepsis alone. Follow AKI-specific guidelines.
+
+### Sepsis Diagnostic Criteria (Current)
+
+Sepsis is defined as life-threatening organ dysfunction caused by dysregulated host response to infection: SOFA score >= 2 with suspected or confirmed infection.
+Septic Shock is defined as sepsis requiring vasopressor therapy to maintain MAP >= 65 mmHg AND serum lactate >= 2 mmol/L despite adequate fluid resuscitation.
+Screening: NEWS or SIRS criteria preferred over qSOFA for emergency department screening. qSOFA has low sensitivity and should not be used as a single screening tool.
+Machine learning algorithms for sepsis identification achieve average 81% sensitivity and 72% specificity.
+
+## AAFP Practice Guidelines: Surviving Sepsis Updated Recommendations 2022
+## Source: American Academy of Family Physicians, 2022
+
+### AAFP Key Recommendations
+
+Recommendation: Machine learning algorithms are the most accurate way to identify sepsis, with an average 81% sensitivity and 72% specificity.
+Recommendation: Resuscitation with 30 mL/kg of crystalloid fluids is recommended within the first 3 hours. Prefer balanced crystalloids (Lactated Ringer's) over normal saline.
+Recommendation: Norepinephrine is the first-line vasopressor. Start peripherally rather than delaying for central venous access.
+Recommendation: Consider adding vasopressin at 0.03 units/minute if norepinephrine requirements escalate.
+Recommendation: For patients in septic shock, antimicrobials should be started within 1 hour.
+Recommendation: In sepsis without shock, antimicrobials are recommended within 3 hours.
+Recommendation: Use prolonged IV infusions rather than intermittent boluses for beta-lactam antibiotics.
+Recommendation: High-flow nasal oxygen is recommended over non-invasive ventilation for hypoxic respiratory failure in sepsis.
+Recommendation: Prone positioning for more than 12 hours per day within the first 36 hours improves survival in severe ARDS.
+Recommendation: IV corticosteroids accelerate resolution of shock by 1.5 days. Typical dosing: hydrocortisone 200 mg daily after 4 hours of vasopressor therapy.
+Recommendation: Restrictive transfusion strategy is recommended (hemoglobin threshold < 7 g/dL).
+Recommendation: Source control (drainage, debridement, device removal) is essential after initial resuscitation and should not be delayed.
