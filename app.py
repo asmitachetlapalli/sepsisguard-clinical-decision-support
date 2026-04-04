@@ -178,15 +178,19 @@ with tab1:
                     explainer = shap.TreeExplainer(xgb_model)
                     shap_values = explainer.shap_values(X_df)
 
-                    # Get top contributing features
+                    # Get top contributing features — exclude temporal (delta/roll3) since
+                    # they're meaningless on single-point dashboard input
                     sv = shap_values[0]
-                    indices = np.argsort(np.abs(sv))[::-1][:10]
+                    base_indices = [i for i, name in enumerate(feature_names)
+                                    if "_delta" not in name and "_roll3" not in name]
+                    base_sv = [(i, sv[i]) for i in base_indices]
+                    base_sv.sort(key=lambda x: abs(x[1]), reverse=True)
+                    top_features = base_sv[:10]
 
                     # Build display
                     shap_data = []
-                    for idx in indices:
+                    for idx, val in top_features:
                         name = feature_names[idx]
-                        val = sv[idx]
                         direction = "Increases risk" if val > 0 else "Decreases risk"
                         shap_data.append({
                             "Feature": name,
@@ -201,8 +205,8 @@ with tab1:
                     # Bar chart
                     import matplotlib.pyplot as plt
                     fig, ax = plt.subplots(figsize=(8, 4))
-                    top_names = [feature_names[i] for i in indices[:10]][::-1]
-                    top_vals = [sv[i] for i in indices[:10]][::-1]
+                    top_names = [feature_names[i] for i, _ in top_features][::-1]
+                    top_vals = [v for _, v in top_features][::-1]
                     colors = ["#e74c3c" if v > 0 else "#2ecc71" for v in top_vals]
                     ax.barh(top_names, top_vals, color=colors)
                     ax.set_xlabel("SHAP Value (impact on prediction)")
@@ -254,9 +258,9 @@ with tab1:
                             query = f"sepsis management {' '.join(abnormals)}"
                             # Encode query ourselves to avoid Streamlit deadlock
                             query_embedding = embed_model.encode([query]).tolist()
-                            results = rag_collection.query(query_embeddings=query_embedding, n_results=3)
+                            results = rag_collection.query(query_embeddings=query_embedding, n_results=5)
                             context = "\n---\n".join(results["documents"][0])
-                            st.caption(f"Retrieved {len(context)} chars from SSC 2021 guidelines")
+                            st.caption(f"Retrieved {len(context)} chars from clinical guidelines (SSC 2021, 2023 ED Update, AAFP 2022)")
 
                         # Step 2: Build prompt
                         risk_level = "HIGH" if primary_risk >= 0.7 else "MODERATE" if primary_risk >= 0.4 else "LOW"
@@ -312,6 +316,4 @@ with tab2:
     Retrieves relevant Surviving Sepsis Campaign 2021 guidelines and generates
     evidence-based recommendations using Google Gemini.
 
-    ### Disclaimer
-    For educational and research purposes only. NOT a substitute for professional medical judgment.
     """)
