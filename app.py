@@ -181,8 +181,11 @@ with tab1:
                     # Get top contributing features — exclude temporal (delta/roll3) since
                     # they're meaningless on single-point dashboard input
                     sv = shap_values[0]
+                    # Only show features the user actually enters on the dashboard
+                    HIDDEN_FEATURES = {"Gender", "HospAdmTime", "Bilirubin_total", "Platelets"}
                     base_indices = [i for i, name in enumerate(feature_names)
-                                    if "_delta" not in name and "_roll3" not in name]
+                                    if "_delta" not in name and "_roll3" not in name
+                                    and name not in HIDDEN_FEATURES]
                     base_sv = [(i, sv[i]) for i in base_indices]
                     base_sv.sort(key=lambda x: abs(x[1]), reverse=True)
                     top_features = base_sv[:10]
